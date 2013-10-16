@@ -2,7 +2,7 @@
 
 #thsp-sticky-header {
 	margin-top: -100px;
-	padding: 8px;
+	padding: 8px 10px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -20,8 +20,8 @@
 }
 #thsp-sticky-header-title {
 	float: left;
-	font-size: 24px;
-	line-height: 36px;
+	font-size: 22px;
+	line-height: 30px;
 }
 #thsp-sticky-header-title img {
 	display: block;
