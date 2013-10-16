@@ -30,10 +30,11 @@ endif;
 	
 	<?php if ( isset( $thsp_sticky_header_settings['menu' ] ) ) :
 		$menu_args = array(
-			'menu'		=> $thsp_sticky_header_settings['menu' ],
-			'depth'		=> 1,
-			'menu_id'	=> 'thsp-sticky-header-menu',
-			'container'	=> ''
+			'menu'			=> $thsp_sticky_header_settings['menu' ],
+			'depth'			=> 1,
+			'menu_id'		=> 'thsp-sticky-header-menu',
+			'container'		=> '',
+			'fallback_cb'	=> ''
 		);
 		wp_nav_menu( $menu_args );
 	endif; ?>

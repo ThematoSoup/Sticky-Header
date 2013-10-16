@@ -10,6 +10,11 @@
  */
 
 add_action( 'customize_register', 'thsp_sticky_header_customize_register' );
+/**
+ * Registers all Customizer options.
+ *
+ * @since     1.0.0
+ */
 function thsp_sticky_header_customize_register( $wp_customize ) {
 	$thsp_plugin_slug = 'thsp-sticky-header';
 
@@ -31,8 +36,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 		'thsp_sticky_header',
 		array(
 			'title'			=> __( 'Sticky Header', $thsp_plugin_slug ),
-			'priority'		=> 1,
-			'description'	=> __( 'Lalalala', $thsp_plugin_slug )
+			'priority'		=> 1
 		) 
 	);
 
@@ -51,7 +55,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 			$wp_customize,
 			'thsp_sticky_header[logo]',
 			array(
-				'label'		=> __( 'Logo (image height should be 36px)', $thsp_plugin_slug ),
+				'label'		=> __( 'Logo (image height should be 30px)', $thsp_plugin_slug ),
 				'section'	=> 'thsp_sticky_header',
 				'settings'	=> 'thsp_sticky_header[logo]',
 			)
@@ -61,7 +65,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 	// Sticky Header menu
 	$menus = wp_get_nav_menus();
 	if ( $menus ) :
-		$choices = array( 0 => __( '&mdash; Select &mdash;' ) );
+		$choices = array( 0 => __( '&mdash; Select a menu &mdash;' ) );
 		foreach ( $menus as $menu ) :
 			$choices[ $menu->term_id ] = wp_html_excerpt( $menu->name, 40, '&hellip;' );
 		endforeach;
@@ -130,7 +134,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 		) 
 	);
 
-	// Sticky Header text color
+	// Sticky Header show at
 	$wp_customize->add_setting(
 		'thsp_sticky_header[show_at]',
 		array(
@@ -151,4 +155,45 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 			) 
 		) 
 	);
+
+	// Sticky Header hide if narrower than
+	$wp_customize->add_setting(
+		'thsp_sticky_header[hide_if_narrower]',
+		array(
+			'default'			=> '600',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'type'				=> 'option',
+			'capability'		=> 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new Sticky_Header_Number_Control(
+			$wp_customize,
+			'thsp_sticky_header[hide_if_narrower]',
+			array(
+				'label'		=> __( 'Hide if screen is narrower than (in pixels)', $thsp_plugin_slug ),
+				'section'	=> 'thsp_sticky_header',
+				'settings'	=> 'thsp_sticky_header[hide_if_narrower]',
+			) 
+		) 
+	);
+}
+
+/**
+ * Returns plugin settings.
+ *
+ * @since     1.0.0
+ *
+ * @return    array    Merged array of plugin settings and plugin defaults.
+ */
+function thsp_sticky_header_get_settings() {
+	$plugin_defaults = array(
+		'background_color'		=> '#181818',
+		'text_color'			=> '#f9f9f9',
+		'show_at'				=> '200',
+		'hide_if_narrower'		=> '600'
+	);
+	$plugin_settings = get_option( 'thsp_sticky_header' );
+
+	return wp_parse_args( $plugin_settings, $plugin_defaults );
 }

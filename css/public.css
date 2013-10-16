@@ -1,7 +1,7 @@
 /* This stylesheet is used to style the public view of the plugin. */
 
 #thsp-sticky-header {
-	margin-top: -100px;
+	margin-top: -200px;
 	padding: 8px 10px;
 	position: fixed;
 	top: 0;
@@ -34,7 +34,7 @@
 }
 #thsp-sticky-header-menu li {
 	display: inline-block;
-	margin-left: 1em;
+	margin-left: 1.25em;
 	font-size: 12px;
 }
 #thsp-sticky-header a {

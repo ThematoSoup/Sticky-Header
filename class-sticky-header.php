@@ -184,7 +184,8 @@ class Sticky_Header {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		$plugin_settings = get_option( 'thsp_sticky_header' );
 		$script_params = array(
-			'show_at'	=> $plugin_settings['show_at']
+			'show_at'			=> $plugin_settings['show_at'],
+			'hide_if_narrower'	=> $plugin_settings['hide_if_narrower']
 		);
 		wp_localize_script( $this->plugin_slug . '-plugin-script', 'StickyHeaderParams', $script_params );
 	}
@@ -228,7 +229,7 @@ class Sticky_Header {
 	 * @since    1.0.0
 	 */
 	public function generate_css() {
-		$plugin_settings = get_option( 'thsp_sticky_header' ); ?>
+		$plugin_settings = thsp_sticky_header_get_settings(); ?>
 		<style type="text/css">
 			#thsp-sticky-header {
 				background-color: <?php echo $plugin_settings['background_color']; ?>;
