@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sticky Header by ThematoSoup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-17 12:06+0100\n"
-"PO-Revision-Date: 2013-10-17 12:07+0100\n"
+"POT-Creation-Date: 2013-10-17 12:36+0100\n"
+"PO-Revision-Date: 2013-10-17 12:36+0100\n"
 "Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
 "Language-Team: ThematoSoup <contact@thematosoup.com>\n"
 "Language: en_US\n"
@@ -20,20 +20,21 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: class-sticky-header.php:218 sticky-header-settings.php:38
+#: class-sticky-header.php:217 sticky-header-settings.php:38
 msgid "Sticky Header by ThematoSoup"
 msgstr ""
 
-#: class-sticky-header.php:220
+#: class-sticky-header.php:219
 #, php-format
 msgid ""
-"<p>Thank you for installing Sticky Header! If you have any questions about "
-"it please use our <a href=\"%1$s\" target=\"_blank\">dedicated support "
-"forum</a>.</p><p>For any suggestions on how to make Sticky Header better, "
-"you can get in touch with us on <a href=\"%2$s\" target=\"_blank\">Twitter</"
-"a>.</p><p>If you find our plugin useful, please <a href=\"%3$s\" target="
-"\"_blank\">rating it at WordPress.org</a> or subscribing to our <a href="
-"\"%4$s\" target=\"_blank\">mailing list</a>.</p>"
+"<p>Thank you for installing Sticky Header! You can edit your Sticky Header "
+"from Appearance > Customize screen. If you have any questions about it "
+"please use our <a href=\"%1$s\" target=\"_blank\">dedicated support forum</"
+"a>.</p><p>For any suggestions on how to make Sticky Header better, you can "
+"get in touch with us on <a href=\"%2$s\" target=\"_blank\">Twitter</a>.</"
+"p><p>If you find our plugin useful, please <a href=\"%3$s\" target=\"_blank"
+"\">rating it at WordPress.org</a> or subscribing to our <a href=\"%4$s\" "
+"target=\"_blank\">mailing list</a>.</p>"
 msgstr ""
 
 #: sticky-header-settings.php:58

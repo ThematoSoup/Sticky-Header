@@ -177,8 +177,7 @@ class Sticky_Header {
 				color: <?php echo $plugin_settings['text_color']; ?> !important;
 			}
 		</style>
-		<?php
-	}
+	<?php }
 
 	/**
 	 * Sticky Header admin pointer
@@ -217,7 +216,7 @@ class Sticky_Header {
 	public function print_admin_pointer_scripts() {
 		$pointer_content  = '<h3>' . __( 'Sticky Header by ThematoSoup', $this->plugin_slug ) . '</h3>';
 		$pointer_content .= sprintf(
-			'<p>Thank you for installing Sticky Header! If you have any questions about it please use our <a href="%1$s" target="_blank">dedicated support forum</a>.</p><p>For any suggestions on how to make Sticky Header better, you can get in touch with us on <a href="%2$s" target="_blank">Twitter</a>.</p><p>If you find our plugin useful, please <a href="%3$s" target="_blank">rating it at WordPress.org</a> or subscribing to our <a href="%4$s" target="_blank">mailing list</a>.</p>',
+			'<p>Thank you for installing Sticky Header! You can edit your Sticky Header from Appearance > Customize screen. If you have any questions about it please use our <a href="%1$s" target="_blank">dedicated support forum</a>.</p><p>For any suggestions on how to make Sticky Header better, you can get in touch with us on <a href="%2$s" target="_blank">Twitter</a>.</p><p>If you find our plugin useful, please <a href="%3$s" target="_blank">rating it at WordPress.org</a> or subscribing to our <a href="%4$s" target="_blank">mailing list</a>.</p>',
 			'http://support.thematosoup.com',
 			'http://twitter.com/ThematoSoup',
 			'http://wordpress.org/plugins/sticky-header/',
