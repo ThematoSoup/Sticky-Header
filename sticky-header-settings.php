@@ -35,7 +35,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'thsp_sticky_header',
 		array(
-			'title'			=> __( 'Sticky Header', $thsp_plugin_slug ),
+			'title'			=> __( 'Sticky Header by ThematoSoup', $thsp_plugin_slug ),
 			'priority'		=> 1
 		) 
 	);
