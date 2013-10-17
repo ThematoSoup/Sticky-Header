@@ -22,6 +22,7 @@
 	float: left;
 	font-size: 22px;
 	line-height: 30px;
+	margin: 0 !important;
 }
 #thsp-sticky-header-title img {
 	display: block;
@@ -31,10 +32,11 @@
 #thsp-sticky-header-menu {
 	float: right;
 	text-align: right;
+	margin: 0 !important;
 }
 #thsp-sticky-header-menu li {
 	display: inline-block;
-	margin-left: 1.25em;
+	margin: 0 0 0 1.25em !important;
 	font-size: 12px;
 }
 #thsp-sticky-header a {
