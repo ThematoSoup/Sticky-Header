@@ -1,27 +1,65 @@
-# Copyright (C) 2013 TODO
-# This file is distributed under the same license as the TODO package.
 msgid ""
 msgstr ""
-"Project-Id-Version: TODO 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/plugin-name\n"
-"POT-Creation-Date: 2013-05-10 11:23:19+00:00\n"
+"Project-Id-Version: Sticky Header by ThematoSoup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-17 12:06+0100\n"
+"PO-Revision-Date: 2013-10-17 12:07+0100\n"
+"Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
+"Language-Team: ThematoSoup <contact@thematosoup.com>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-05-10 10:37-0500\n"
-"Last-Translator: FULL NAME <email@example.com>\n"
-"Language-Team: LANGUAGE <translations@example.com >\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
-"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_loop;_nx_loop;sprintf\n"
 "X-Poedit-Basepath: ../\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: class-plugin-name.php:214
-msgid "Page Title"
+#: class-sticky-header.php:149
+msgid "Settings"
 msgstr ""
 
-#: class-plugin-name.php:215
-msgid "Menu Text"
+#: class-sticky-header.php:218 sticky-header-settings.php:38
+msgid "Sticky Header by ThematoSoup"
+msgstr ""
+
+#: class-sticky-header.php:220
+#, php-format
+msgid ""
+"<p>Thank you for installing Sticky Header! If you have any questions about "
+"it please use our <a href=\"%1$s\" target=\"_blank\">dedicated support "
+"forum</a>.</p><p>For any suggestions on how to make Sticky Header better, "
+"you can get in touch with us on <a href=\"%2$s\" target=\"_blank\">Twitter</"
+"a>.</p><p>If you find our plugin useful, please <a href=\"%3$s\" target="
+"\"_blank\">rating it at WordPress.org</a> or subscribing to our <a href="
+"\"%4$s\" target=\"_blank\">mailing list</a>.</p>"
+msgstr ""
+
+#: sticky-header-settings.php:58
+msgid "Logo (image height should be 30px)"
+msgstr ""
+
+#: sticky-header-settings.php:68
+msgid "&mdash; Select a menu &mdash;"
+msgstr ""
+
+#: sticky-header-settings.php:85
+msgid "Menu"
+msgstr ""
+
+#: sticky-header-settings.php:108
+msgid "Background color"
+msgstr ""
+
+#: sticky-header-settings.php:130
+msgid "Text color"
+msgstr ""
+
+#: sticky-header-settings.php:152
+msgid "Make visible when scrolled to (in pixels)"
+msgstr ""
+
+#: sticky-header-settings.php:174
+msgid "Hide if screen is narrower than (in pixels)"
 msgstr ""
