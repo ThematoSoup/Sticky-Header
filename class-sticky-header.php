@@ -75,9 +75,10 @@ class Sticky_Header {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 
-		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		add_action( 'wp_footer', array( $this, 'display' ) );
-		add_action( 'wp_head', array( $this, 'generate_css' ) );
+		// Define custom functionality.
+		add_action( 'wp_footer', array( $this, 'display' ) ); // Display Sticky Header
+		add_action( 'wp_head', array( $this, 'generate_css' ) ); // Sticky Header generated CSS
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_pointer' ) ); // Admin pointer
 	}
 
 	/**
@@ -95,61 +96,6 @@ class Sticky_Header {
 		}
 
 		return self::$instance;
-	}
-
-	/**
-	 * Fired when the plugin is activated.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
-	 */
-	public static function activate( $network_wide ) {
-		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-			if ( $network_wide  ) {
-				// Get all blog ids
-				$blog_ids = self::get_blog_ids();
-
-				foreach ( $blog_ids as $blog_id ) {
-					switch_to_blog( $blog_id );
-					self::single_activate();
-				}
-				restore_current_blog();
-			} else {
-				self::single_activate();
-			}
-		} else {
-			self::single_activate();
-		}
-	}
-
-	/**
-	 * Get all blog ids of blogs in the current network that are:
-	 * - not archived
-	 * - not spam
-	 * - not deleted
-	 *
-	 * @since    1.0.0
-	 *
-	 * @return	array|false	The blog ids, false if no matches.
-	 */
-	private static function get_blog_ids() {
-		global $wpdb;
-
-		// get an array of blog ids
-		$sql = "SELECT blog_id FROM $wpdb->blogs
-			WHERE archived = '0' AND spam = '0'
-			AND deleted = '0'";
-		return $wpdb->get_col( $sql );
-	}
-
-	/**
-	 * Fired for each blog when the plugin is activated.
-	 *
-	 * @since    1.0.0
-	 */
-	private static function single_activate() {
-		// TODO: Define activation functionality here
 	}
 
 	/**
@@ -182,6 +128,8 @@ class Sticky_Header {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		
+		// Send plugin settings to JS file.
 		$plugin_settings = get_option( 'thsp_sticky_header' );
 		$script_params = array(
 			'show_at'			=> $plugin_settings['show_at'],
@@ -191,7 +139,7 @@ class Sticky_Header {
 	}
 
 	/**
-	 * Add settings action link to the plugins page.
+	 * Add settings action link to Customize page.
 	 *
 	 * @since    1.0.0
 	 */
@@ -205,16 +153,6 @@ class Sticky_Header {
 	}
 
 	/**
-	 * NOTE:  Actions are points in the execution of a page or process
-	 *        lifecycle that WordPress fires.
-	 *
-	 *        WordPress Actions: http://codex.wordpress.org/Plugin_API#Actions
-	 *        Action Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since    1.0.0
-	 */
-
-	/**
 	 * Sticky Header output
 	 *
 	 * @since    1.0.0
@@ -224,7 +162,7 @@ class Sticky_Header {
 	}
 
 	/**
-	 * Sticky Header CSS
+	 * Sticky Header generated CSS
 	 *
 	 * @since    1.0.0
 	 */
@@ -242,15 +180,67 @@ class Sticky_Header {
 		<?php
 	}
 
-
 	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
-	 *
-	 *        WordPress Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *        Filter Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
+	 * Sticky Header admin pointer
 	 *
 	 * @since    1.0.0
 	 */
+	public function admin_pointer() {
+		// Assume pointer shouldn't be shown
+		$enqueue_pointer_script_style = false;
+	
+		// First check if current user can edit theme options
+		if ( user_can( get_current_user_id(), 'edit_theme_options' ) ) :
+			// Get array list of dismissed pointers for current user and convert it to array
+			$dismissed_pointers = explode( ',', get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+		
+			// Check if our pointer is not among dismissed ones
+			if( ! in_array( 'thsp_sticky_header_pointer', $dismissed_pointers ) ) :
+				$enqueue_pointer_script_style = true;
+				// Add footer scripts using callback function
+				add_action( 'admin_print_footer_scripts', array( $this, 'print_admin_pointer_scripts' ) );
+			endif;
+		
+			// Enqueue pointer CSS and JS files, if needed
+			if( $enqueue_pointer_script_style ) :
+				wp_enqueue_style( 'wp-pointer' );
+				wp_enqueue_script( 'wp-pointer' );
+			endif;
+		endif;
+	}
+
+	/**
+	 * Print Sticky Header admin pointer scripts
+	 *
+	 * @since    1.0.0
+	 */
+	public function print_admin_pointer_scripts() {
+		$pointer_content  = '<h3>Sticky Header by ThematoSoup</h3>';
+		$pointer_content .= '<p>Thank you for installing Sticky Header! If you have any questions about it please use our <a href="" target="_blank">dedicated support forum</a>.</p>';
+		$pointer_content .= '<p>For any suggestions on how to make Sticky Header better, you can get in touch with us on <a href="" target="_blank">Twitter</a>.</p>';
+		$pointer_content .= '<p>If you find our plugin useful, please <a href="" target="_blank">rating it at WordPress.org</a> or subscribing to our <a href="#">mailing list</a>.</p>';
+		?>
+		
+		<script type="text/javascript">
+		//<![CDATA[
+		jQuery(document).ready( function($) {
+			$('#menu-appearance').pointer({
+				content:		'<?php echo $pointer_content; ?>',
+				position:		{
+									edge:	'left', // arrow direction
+									align:	'center' // vertical alignment
+								},
+				pointerWidth:	400,
+				close:			function() {
+									$.post( ajaxurl, {
+											pointer: 'thsp_sticky_header_pointer', // pointer ID
+											action: 'dismiss-wp-pointer'
+									});
+								}
+			}).pointer('open');
+		});
+		//]]>
+		</script>	
+	<?php }
 
 }
