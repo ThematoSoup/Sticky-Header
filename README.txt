@@ -37,8 +37,8 @@ An answer to that question.
 
 == Screenshots ==
 
-1. This is the first screen shot
-2. This is the second screen shot
+1. Sticky header in action
+2. Sticky Header Customizer options
 
 == Changelog ==
 
