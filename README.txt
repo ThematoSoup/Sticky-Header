@@ -11,7 +11,7 @@ Sticky Header by ThematoSoup allows you to add sticky header to any WordPress th
 
 == Description ==
 
-For **support requests** please use our [dedicated support forums] (http://support.thematosoup.com "ThematoSoup support forums).
+For **support requests** please use our [dedicated support forums](http://support.thematosoup.com "ThematoSoup support forums").
 
 The Sticky Header WordPress plugin makes your header visible at all times. It's a great feature that allows people to browse faster and consume more of your content.
 
