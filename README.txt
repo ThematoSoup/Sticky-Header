@@ -11,7 +11,7 @@ Sticky Header by ThematoSoup allows you to add sticky header to any WordPress th
 
 == Description ==
 
-For *support requests* please use our dedicated support forums at - http://support.thematosoup.com
+For **support requests** please use our [dedicated support forums] (http://support.thematosoup.com "ThematoSoup support forums).
 
 The Sticky Header WordPress plugin makes your header visible at all times. It's a great feature that allows people to browse faster and consume more of your content.
 
@@ -23,18 +23,12 @@ Your branding (logo) is something you want visitors to subconsciously keep in mi
 
 Sticky Header by ThematoSoup has just few options, which you can find in your Theme Customizer. This makes it *incredibly easy to configure and use*.
 
-* Menu
-You need to select at least one menu from the dropdown list. The menu in Sticky Header *shows only first level items*. No submenu items are shown at this time.
-* Logo
-You can upload your sticky header logo by clicking on "Upload new" > "Select a file". Ideally, this *logo should be 30px* tall or it will be resized. If a logo image is not uploaded, site title will be used.
-* Background color
-You can choose your custom sticky header background color.
-* Text color
-Choose your sticky header text color so it provides enough contrast with regards to the background color.
-* Make visible when scrolled to
-This is the distance from the top of the page at which sticky header will show, in pixels. 
-* Hide if screen is narrower than
-Sticky header will not be shown on screens narrower than this value, in pixels. When people use mobile devices, they're used to vertical scrolling so it's not necessary to have sticky headers.
+* **Menu** - You need to create at least one navigation menu before you can add it to Sticky Header. The menu in Sticky Header **shows only first level items**, so no submenu items will be shown.
+* **Logo** - You can upload your sticky header logo by clicking on "Upload new" > "Select a file". Ideally, this **logo should be 30px** tall or it will be resized. If a logo image is not uploaded, site title will be used.
+* **Background color** - You can choose your custom sticky header background color.
+* **Text color** - Choose your sticky header text color so it provides enough contrast with regards to the background color.
+* **Make visible when scrolled to** - This is the distance from the top of the page at which sticky header will show, in pixels. 
+* **Hide if screen is narrower than** - Sticky header will not be shown on screens narrower than this value, in pixels. When people use mobile devices, they're used to vertical scrolling so it's not necessary to have sticky headers.
 
 == Installation ==
 
