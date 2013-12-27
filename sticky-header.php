@@ -1,27 +1,24 @@
 <?php
 /**
- * The WordPress Plugin Boilerplate.
+ * Sticky Header plugin by ThematoSoup.
  *
- * A foundation off of which to build well-documented WordPress plugins that also follow
- * WordPress coding standards and PHP best practices.
- *
- * @package   Sticky_Header
- * @author    ThematoSoup <contact@thematosoup.com>
- * @license   GPL-2.0+
- * @link      http://thematosoup.com
- * @copyright 2013 ThematoSoup
+ * @package			Sticky_Header
+ * @author			ThematoSoup <contact@thematosoup.com>
+ * @license			GPL-2.0+
+ * @link			http://thematosoup.com
+ * @copyright		2013 ThematoSoup
  *
  * @wordpress-plugin
- * Plugin Name: Sticky Header
- * Plugin URI:  http://thematosoup.com
- * Description: Adds sticky header to your WordPress website
- * Version:     1.0.0
- * Author:      ThematoSoup
- * Author URI:  http://thematosoup.com
- * Text Domain: thsp-sticky-header
- * License:     GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path: /languages
+ * Plugin Name:		Sticky Header
+ * Plugin URI:		http://thematosoup.com
+ * Description:		Adds sticky header to your WordPress website
+ * Version:			1.1
+ * Author:			ThematoSoup
+ * Author URI:		http://thematosoup.com
+ * Text Domain:		thsp-sticky-header
+ * License:			GPL-2.0+
+ * License URI:		http://www.gnu.org/licenses/gpl-2.0.txt
+ * Domain Path:		/languages
  */
 
 // If this file is called directly, abort.

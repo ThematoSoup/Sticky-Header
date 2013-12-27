@@ -82,10 +82,11 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'thsp_sticky_header[menu]',
 				array(
-				'label'   => __( 'Menu', $thsp_plugin_slug ),
-				'section' => 'thsp_sticky_header',
-				'type'    => 'select',
-				'choices' => $choices,
+				'label'   	=> __( 'Menu', $thsp_plugin_slug ),
+				'section' 	=> 'thsp_sticky_header',
+				'type'    	=> 'select',
+				'choices' 	=> $choices,
+				'priority'	=> 10
 			)
 		);
 	endif;
@@ -108,6 +109,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 				'label'		=> __( 'Background color', $thsp_plugin_slug ),
 				'section'	=> 'thsp_sticky_header',
 				'settings'	=> 'thsp_sticky_header[background_color]',
+				'priority'	=> 20
 			) 
 		) 
 	);
@@ -130,6 +132,30 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 				'label'		=> __( 'Text color', $thsp_plugin_slug ),
 				'section'	=> 'thsp_sticky_header',
 				'settings'	=> 'thsp_sticky_header[text_color]',
+				'priority'	=> 30
+			) 
+		) 
+	);
+
+	// Sticky Header inner width
+	$wp_customize->add_setting(
+		'thsp_sticky_header[inner_width]',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'type'				=> 'option',
+			'capability'		=> 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new Sticky_Header_Number_Control(
+			$wp_customize,
+			'thsp_sticky_header[inner_width]',
+			array(
+				'label'		=> __( 'Sticky Header max width (in pixels)', $thsp_plugin_slug ),
+				'section'	=> 'thsp_sticky_header',
+				'settings'	=> 'thsp_sticky_header[inner_width]',
+				'priority'	=> 40
 			) 
 		) 
 	);
@@ -152,6 +178,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 				'label'		=> __( 'Make visible when scrolled to (in pixels)', $thsp_plugin_slug ),
 				'section'	=> 'thsp_sticky_header',
 				'settings'	=> 'thsp_sticky_header[show_at]',
+				'priority'	=> 50
 			) 
 		) 
 	);
@@ -174,6 +201,7 @@ function thsp_sticky_header_customize_register( $wp_customize ) {
 				'label'		=> __( 'Hide if screen is narrower than (in pixels)', $thsp_plugin_slug ),
 				'section'	=> 'thsp_sticky_header',
 				'settings'	=> 'thsp_sticky_header[hide_if_narrower]',
+				'priority'	=> 60
 			) 
 		) 
 	);

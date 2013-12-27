@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sticky Header by ThematoSoup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-17 16:49+0100\n"
-"PO-Revision-Date: 2013-10-17 16:49+0100\n"
+"POT-Creation-Date: 2013-12-27 11:02+0100\n"
+"PO-Revision-Date: 2013-12-27 11:02+0100\n"
 "Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
 "Language-Team: ThematoSoup <contact@thematosoup.com>\n"
 "Language: en_US\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: class-sticky-header.php:217 sticky-header-settings.php:38
+#: class-sticky-header.php:223 sticky-header-settings.php:38
 msgid "Sticky Header by ThematoSoup"
 msgstr ""
 
-#: class-sticky-header.php:219
+#: class-sticky-header.php:225
 #, php-format
 msgid ""
 "<p>Thank you for installing Sticky Header! You can edit your Sticky Header "
@@ -49,18 +49,22 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: sticky-header-settings.php:108
+#: sticky-header-settings.php:109
 msgid "Background color"
 msgstr ""
 
-#: sticky-header-settings.php:130
+#: sticky-header-settings.php:132
 msgid "Text color"
 msgstr ""
 
-#: sticky-header-settings.php:152
+#: sticky-header-settings.php:155
+msgid "Sticky Header max width (in pixels)"
+msgstr ""
+
+#: sticky-header-settings.php:178
 msgid "Make visible when scrolled to (in pixels)"
 msgstr ""
 
-#: sticky-header-settings.php:174
+#: sticky-header-settings.php:201
 msgid "Hide if screen is narrower than (in pixels)"
 msgstr ""

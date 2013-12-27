@@ -176,6 +176,12 @@ class Sticky_Header {
 			#thsp-sticky-header a {
 				color: <?php echo $plugin_settings['text_color']; ?> !important;
 			}
+			<?php if( '' != $plugin_settings['inner_width'] ) : ?>
+			#thsp-sticky-header-inner {
+				max-width: <?php echo $plugin_settings['inner_width']; ?>px;
+				margin: 0 auto;
+			}
+			<?php endif; ?>
 		</style>
 	<?php }
 

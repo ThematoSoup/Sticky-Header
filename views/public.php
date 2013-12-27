@@ -24,18 +24,20 @@ endif;
 ?>
 
 <div id="thsp-sticky-header">
-	<div id="thsp-sticky-header-title">
-		<a href="<?php echo bloginfo( 'url' ); ?>" title="<?php bloginfo( 'description' ); ?>"><?php echo $thsp_sticky_header_title; ?></a>
-	</div>
-	
-	<?php if ( isset( $thsp_sticky_header_settings['menu' ] ) ) :
-		$menu_args = array(
-			'menu'			=> $thsp_sticky_header_settings['menu' ],
-			'depth'			=> 1,
-			'menu_id'		=> 'thsp-sticky-header-menu',
-			'container'		=> '',
-			'fallback_cb'	=> ''
-		);
-		wp_nav_menu( $menu_args );
-	endif; ?>
+	<div id="thsp-sticky-header-inner">
+		<div id="thsp-sticky-header-title">
+			<a href="<?php echo bloginfo( 'url' ); ?>" title="<?php bloginfo( 'description' ); ?>"><?php echo $thsp_sticky_header_title; ?></a>
+		</div>
+		
+		<?php if ( isset( $thsp_sticky_header_settings['menu' ] ) ) :
+			$menu_args = array(
+				'menu'			=> $thsp_sticky_header_settings['menu' ],
+				'depth'			=> 1,
+				'menu_id'		=> 'thsp-sticky-header-menu',
+				'container'		=> '',
+				'fallback_cb'	=> ''
+			);
+			wp_nav_menu( $menu_args );
+		endif; ?>
+	</div><!-- #thsp-sticky-header-inner -->
 </div><!-- #thsp-sticky-header -->

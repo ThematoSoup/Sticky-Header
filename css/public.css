@@ -7,11 +7,12 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 99998;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
 .admin-bar #thsp-sticky-header {
-	top: 28px;
+	top: 32px;
 }
 #thsp-sticky-header:after {
 	content: "";

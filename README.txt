@@ -2,8 +2,8 @@
 Contributors: slobodanmanic, nikolicdragan
 Tags: sticky header, header, sticky menu, fixed header
 Requires at least: 3.5
-Tested up to: 3.6.1
-Stable tag: trunk
+Tested up to: 3.8.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,12 @@ It's located in Appearance > Customize > Sticky Header by ThematoSoup.
 2. Sticky Header Customizer options
 
 == Changelog ==
+
+= 1.1 =
+* Added Sticky Header max interior width.
+
+= 1.0.1 =
+* Fixed header’s z-index.
 
 = 1.0 =
 * First version.
