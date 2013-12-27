@@ -12,7 +12,7 @@
  * Plugin Name:		Sticky Header
  * Plugin URI:		http://thematosoup.com
  * Description:		Adds sticky header to your WordPress website
- * Version:			1.1
+ * Version:			1.1.1
  * Author:			ThematoSoup
  * Author URI:		http://thematosoup.com
  * Text Domain:		thsp-sticky-header

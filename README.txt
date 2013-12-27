@@ -3,7 +3,7 @@ Contributors: slobodanmanic, nikolicdragan
 Tags: sticky header, header, sticky menu, fixed header
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,7 @@ Sticky Header by ThematoSoup has just few options, which you can find in your Th
 * **Logo** - You can upload your sticky header logo by clicking on "Upload new" > "Select a file". Ideally, this **logo should be 30px** tall or it will be resized. If a logo image is not uploaded, site title will be used.
 * **Background color** - You can choose your custom sticky header background color.
 * **Text color** - Choose your sticky header text color so it provides enough contrast with regards to the background color.
+* **Sticky Header max width** - This option allows you to match interior Sticky Header width to your content area width. 
 * **Make visible when scrolled to** - This is the distance from the top of the page at which sticky header will show, in pixels. 
 * **Hide if screen is narrower than** - Sticky header will not be shown on screens narrower than this value, in pixels. When people use mobile devices, they're used to vertical scrolling so it's not necessary to have sticky headers.
 
