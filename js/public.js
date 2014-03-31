@@ -16,10 +16,10 @@
 		// Check browser window width
 		if ($(window).scrollTop() > StickyHeaderParams.show_at && $(window).width() > StickyHeaderParams.hide_if_narrower) {
 			// Show
-			$('#thsp-sticky-header').stop().animate({"margin-top": '0'}, 25);
+			$('#thsp-sticky-header').stop().animate({"margin-top": '0'}, 50);
 		} else {
 			// Hide
-			$('#thsp-sticky-header').stop().animate({"margin-top": '-200'}, 25);
+			$('#thsp-sticky-header').stop().animate({"margin-top": '-200'}, 50);
 		}
 	}
 }(jQuery));
