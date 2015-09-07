@@ -13,7 +13,11 @@
  */
 
 // Get Sticky Header options
-$thsp_sticky_header_settings = get_option( 'thsp_sticky_header' );
+$thsp_sticky_header_settings = get_option( 'thsp_sticky_header', array() );
+$thsp_sticky_header_settings = wp_parse_args( $thsp_sticky_header_settings, array(
+		'logo' => ''
+	)
+);
 
 // Check if there is a logo image
 if ( '' != $thsp_sticky_header_settings['logo'] ) :
