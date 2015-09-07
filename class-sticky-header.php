@@ -127,10 +127,16 @@ class Sticky_Header {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( "js/public$min.js", __FILE__ ), array( 'jquery' ), self::VERSION );
 		
 		// Send plugin settings to JS file.
-		$plugin_settings = get_option( 'thsp_sticky_header' );
+		$plugin_settings = get_option( 'thsp_sticky_header', array() );
+		$plugin_settings = wp_parse_args( $plugin_settings, array(
+				'show_at' => 200,
+				'hide_if_narrower' => 600
+			)
+		);
 		$script_params = array(
 			'show_at'			=> $plugin_settings['show_at'],
 			'hide_if_narrower'	=> $plugin_settings['hide_if_narrower']
